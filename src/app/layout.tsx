@@ -4,6 +4,7 @@ import Providers from '@/store/Providers';
 import ToastProvider from '@/components/ui/ToastProvider';
 import WalletHydrator from '@/components/WalletHydrator';
 import ThemeHydrator from '@/components/ThemeHydrator';
+import RentedHydrator from '@/components/RentedHydrator';
 
 export const metadata: Metadata = {
   title: 'Upland Web3 Rental Demo',
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
               <ThemeHydrator />
               <WalletHydrator />
+              <RentedHydrator />
               {children}
             </div>
           </ToastProvider>
