@@ -1,0 +1,28 @@
+{
+  "name": "web3-rental-poc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "postinstall": "next telemetry disable || true"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.5",
+    "ethers": "^6.11.1",
+    "framer-motion": "^11.0.3",
+    "next": "^14.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.79",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
+  }
+}
