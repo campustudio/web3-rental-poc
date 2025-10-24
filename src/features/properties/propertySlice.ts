@@ -2,12 +2,17 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const propertySlice = createSlice({
   name: 'properties',
-  initialState: { lastRentId: null as null | string },
+  initialState: { rentedIds: [] as string[] },
   reducers: {
-    setLastRentId: (state, action) => {
-      state.lastRentId = action.payload;
+    addRentedId: (state, action) => {
+      const id: string = action.payload;
+      if (!state.rentedIds.includes(id)) state.rentedIds.push(id);
+    },
+    removeRentedId: (state, action) => {
+      const id: string = action.payload;
+      state.rentedIds = state.rentedIds.filter((x) => x !== id);
     },
   },
 });
-export const { setLastRentId } = propertySlice.actions;
+export const { addRentedId, removeRentedId } = propertySlice.actions;
 export default propertySlice.reducer;

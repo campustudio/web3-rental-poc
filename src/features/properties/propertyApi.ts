@@ -16,6 +16,13 @@ export const propertyApi = createApi({
       },
       invalidatesTags: ['Property'],
     }),
+    endRentProperty: builder.mutation<{ success: boolean; id: string }, { id: string }>({
+      async queryFn({ id }) {
+        await new Promise((r) => setTimeout(r, 600));
+        return { data: { success: true, id } } as any;
+      },
+      invalidatesTags: ['Property'],
+    }),
   }),
 });
-export const { useGetPropertiesQuery, useRentPropertyMutation } = propertyApi;
+export const { useGetPropertiesQuery, useRentPropertyMutation, useEndRentPropertyMutation } = propertyApi;
