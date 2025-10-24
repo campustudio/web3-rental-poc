@@ -56,6 +56,10 @@ export default function PropertyCard({ property }: { property: any }) {
           <button
             onClick={async () => {
               try {
+                if (!walletAddress) {
+                  show({ type: 'warning', title: 'Wallet', message: 'Please connect your wallet first.' });
+                  return;
+                }
                 const res = await endRent({ id: property.id }).unwrap();
                 if (res?.success) {
                   dispatch(removeRentedId(property.id));
