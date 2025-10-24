@@ -20,6 +20,48 @@
       "location": "Los Angeles, CA",
       "price": 0.15,
       "image": "https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "p4",
+      "name": "Chelsea Studio",
+      "location": "London, UK",
+      "price": 0.10,
+      "image": "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "p5",
+      "name": "Canal Apartment",
+      "location": "Amsterdam, NL",
+      "price": 0.11,
+      "image": "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "p6",
+      "name": "Eixample Flat",
+      "location": "Barcelona, ES",
+      "price": 0.09,
+      "image": "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "p7",
+      "name": "Marais Loft",
+      "location": "Paris, FR",
+      "price": 0.14,
+      "image": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "p8",
+      "name": "Old Town Suite",
+      "location": "Prague, CZ",
+      "price": 0.08,
+      "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "p9",
+      "name": "City Center Apartment",
+      "location": "Berlin, DE",
+      "price": 0.095,
+      "image": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1200&auto=format&fit=crop"
     }
   ]
 }
