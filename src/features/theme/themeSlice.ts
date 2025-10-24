@@ -8,6 +8,13 @@ const themeSlice = createSlice({
   name: 'theme',
   initialState,
   reducers: {
+    setTheme: (state, action) => {
+      state.theme = action.payload === 'dark' ? 'dark' : 'light';
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('theme', state.theme);
+        document.documentElement.dataset.theme = state.theme;
+      }
+    },
     toggleTheme: (state) => {
       state.theme = state.theme === 'light' ? 'dark' : 'light';
       if (typeof window !== 'undefined') {
@@ -17,5 +24,5 @@ const themeSlice = createSlice({
     },
   },
 });
-export const { toggleTheme } = themeSlice.actions;
+export const { toggleTheme, setTheme } = themeSlice.actions;
 export default themeSlice.reducer;
