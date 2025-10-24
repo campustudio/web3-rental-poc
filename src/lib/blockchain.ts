@@ -16,3 +16,20 @@ export async function connectWithMetaMask(): Promise<WalletInfo> {
   const network = await provider.getNetwork();
   return { address, network: String(network.name) };
 }
+
+// Silently get current connected account (no popup). Returns null if none.
+export async function getConnectedWallet(): Promise<WalletInfo | null> {
+  if (typeof window === 'undefined') return null;
+  const eth = (window as any).ethereum;
+  if (!eth) return null;
+  try {
+    const accounts: string[] = await eth.request({ method: 'eth_accounts' });
+    if (!accounts || accounts.length === 0) return null;
+    const { ethers } = await import('ethers');
+    const provider = new ethers.BrowserProvider(eth);
+    const network = await provider.getNetwork();
+    return { address: accounts[0], network: String(network.name) };
+  } catch {
+    return null;
+  }
+}
