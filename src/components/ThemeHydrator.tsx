@@ -9,8 +9,8 @@ export default function ThemeHydrator() {
 
   useEffect(() => {
     const stored = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
-    const toApply = stored === 'dark' ? 'dark' : 'light';
-    // If Redux not in sync, update it; always ensure DOM dataset is correct
+    const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const toApply = stored ? (stored === 'dark' ? 'dark' : 'light') : prefersDark ? 'dark' : 'light';
     if (theme !== toApply) {
       dispatch(setTheme(toApply));
     } else if (typeof document !== 'undefined') {
