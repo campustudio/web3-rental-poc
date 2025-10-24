@@ -1,8 +1,8 @@
 # web3-rental-poc
 
-# 🏠 Upland Web3 Real Estate Rental Platform (Demo)
+# 🏠 Web3 Real Estate Rental Platform (Demo)
 
-> **By Chris Du — Senior Software Engineer**  
+> **By Chris Du**  
 > A functional Web3-powered rental platform demo showcasing blockchain integration, responsive UI, and clean modern React architecture.
 
 ![Web3 Rental Platform Preview](https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop)
@@ -122,7 +122,7 @@ This mirrors a real Web3 rental flow where tenants rent property using crypto on
 ## 👨‍💻 Author
 
 **Chris Du**  
-Senior Software Engineer — Frontend / Fullstack / Web3  
+— Frontend / Fullstack / Web3  
 🌐 [GitHub](https://github.com/campustudio)  
 📧 878697969@qq.com
 
