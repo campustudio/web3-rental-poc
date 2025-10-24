@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { setItem } from '@/lib/storage';
 
 const propertySlice = createSlice({
   name: 'properties',
@@ -11,14 +12,14 @@ const propertySlice = createSlice({
       const id: string = action.payload;
       if (!state.rentedIds.includes(id)) state.rentedIds.push(id);
       if (typeof window !== 'undefined') {
-        try { localStorage.setItem('rentedIds', JSON.stringify(state.rentedIds)); } catch {}
+        try { setItem('rentedIds', JSON.stringify(state.rentedIds)); } catch {}
       }
     },
     removeRentedId: (state, action) => {
       const id: string = action.payload;
       state.rentedIds = state.rentedIds.filter((x) => x !== id);
       if (typeof window !== 'undefined') {
-        try { localStorage.setItem('rentedIds', JSON.stringify(state.rentedIds)); } catch {}
+        try { setItem('rentedIds', JSON.stringify(state.rentedIds)); } catch {}
       }
     },
   },
