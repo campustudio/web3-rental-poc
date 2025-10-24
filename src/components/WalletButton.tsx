@@ -2,11 +2,13 @@
 import { useConnectWalletMutation } from '@/features/wallet/walletApi';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setWallet } from '@/features/wallet/walletSlice';
+import { useToast } from '@/components/ui/ToastProvider';
 
 export default function WalletButton() {
   const dispatch = useAppDispatch();
   const wallet = useAppSelector((s) => s.wallet);
   const [connectWallet, { isLoading }] = useConnectWalletMutation();
+  const { show } = useToast();
 
   const handleConnect = async () => {
     try {
@@ -14,7 +16,7 @@ export default function WalletButton() {
       dispatch(setWallet(data));
     } catch (e: any) {
       const msg = e?.error || e?.message || 'Failed to connect wallet';
-      alert(msg);
+      show({ type: 'error', title: 'Wallet', message: String(msg) });
     }
   };
 

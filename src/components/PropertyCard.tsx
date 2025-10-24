@@ -3,12 +3,14 @@ import { useRentPropertyMutation } from '@/features/properties/propertyApi';
 import { motion } from 'framer-motion';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setLastRentId } from '@/features/properties/propertySlice';
+import { useToast } from '@/components/ui/ToastProvider';
 
 export default function PropertyCard({ property }: { property: any }) {
   const dispatch = useAppDispatch();
   const lastRentId = useAppSelector((s) => s.properties.lastRentId);
   const walletAddress = useAppSelector((s) => s.wallet.address);
   const [rentProperty, { isLoading }] = useRentPropertyMutation();
+  const { show } = useToast();
   const rented = lastRentId === property.id;
   return (
     <motion.div
@@ -30,13 +32,17 @@ export default function PropertyCard({ property }: { property: any }) {
         onClick={async () => {
           try {
             if (!walletAddress) {
-              alert('Please connect your wallet first.');
+              show({ type: 'warning', title: 'Wallet', message: 'Please connect your wallet first.' });
               return;
             }
             const res = await rentProperty(property).unwrap();
-            if (res?.success) dispatch(setLastRentId(property.id));
+            if (res?.success) {
+              dispatch(setLastRentId(property.id));
+              show({ type: 'success', title: 'Success', message: 'Property rented.' });
+            }
           } catch (e: any) {
-            alert(e?.error || e?.message || 'Rent failed');
+            const msg = e?.error || e?.message || 'Rent failed';
+            show({ type: 'error', title: 'Rent', message: String(msg) });
           }
         }}
         disabled={isLoading || rented}
