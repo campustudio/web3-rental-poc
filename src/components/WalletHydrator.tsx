@@ -17,6 +17,13 @@ export default function WalletHydrator() {
         if (info) dispatch(setWallet(info));
       } catch {
         // ignore
+      } finally {
+        if (typeof document !== 'undefined') {
+          document.documentElement.dataset.walletHydrated = '1';
+        }
+        if (typeof window !== 'undefined') {
+          try { window.dispatchEvent(new CustomEvent('walletHydrated')); } catch {}
+        }
       }
     };
 
