@@ -20,7 +20,7 @@ This project demonstrates how a **Web3 Real Estate Rental Platform** could be ar
 - Real-time state management with **Redux Toolkit + RTK Query**
 - Ready-to-deploy architecture for **Vercel**
 
-It’s a front-end proof-of-concept designed for **Upland’s Web3 Real Estate Platform** recruitment project — reflecting strong ownership, modern design, and production-grade scalability.
+It’s a front-end proof-of-concept designed for **Web3 Real Estate Platform** project — reflecting modern design, and production-grade scalability.
 
 ---
 
@@ -109,9 +109,7 @@ This mirrors a real Web3 rental flow where tenants rent property using crypto on
 
 ---
 
-## 💬 Interview Talking Points
-
-**If discussed during the interview:**
+## 💬 Points
 
 - This project demonstrates _full-stack readiness_ for Web3 UI challenges.
 - It reflects modern engineering practices (RTK Query, multi-chain design, modular state).
@@ -121,7 +119,6 @@ This mirrors a real Web3 rental flow where tenants rent property using crypto on
 
 ## 👨‍💻 Author
 
-**Chris Du**  
 — Frontend / Fullstack / Web3  
 🌐 [GitHub](https://github.com/campustudio)  
 📧 878697969@qq.com
